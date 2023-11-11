@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "csv": "^6.3.5",
+    "csv-parse": "^5.5.2",
+    "fs": "^0.0.1-security",
+    "papaparse": "^5.4.1",
+    "reactstrap": "^9.2.0"
+  }
+}
