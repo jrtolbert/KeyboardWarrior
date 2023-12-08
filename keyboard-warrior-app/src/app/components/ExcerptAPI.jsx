@@ -11,8 +11,7 @@ import Papa from 'papaparse';
 */
 
 
-async function GetCategory() {
-    console.log('Running Get Category function!');
+async function GetCategory () {
     // file path 
     const filePath = './public/Categories.csv';
     
@@ -37,10 +36,10 @@ async function GetCategory() {
 }
 
 
-export default async function() {
+export default async function () {
     const category = await GetCategory();
     const url = `https://contentai-net-text-generation.p.rapidapi.com/v1/text/blog-articles?category=${category}`
-    const response = await fetch(url, {
+    const response = await fetch (url, {
         method: "GET",
         credentials: "same-origin",
         headers: {

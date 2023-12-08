@@ -1,13 +1,12 @@
 "use client"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 
 
 var stringReadIn;
 
 function KeyListener(event) {
-    console.log(event.target.value);
     stringReadIn = event.target.value;
 }
 
@@ -22,6 +21,6 @@ export default function ReadKeys() {
     if (stringReadIn == excerpt.innerText) {
         ta_div.setAttribute("success", true);
         toast("Strings Match!");
-        console.log("The strings match");
+        textArea.removeEventListener("input", KeyListener);
     }
 }
