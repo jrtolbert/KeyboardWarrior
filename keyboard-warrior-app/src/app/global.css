@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* p#excerpt {
+    color: blue;
+} */ 
+p #excerpt {
+    border-color: black;
+}
+
+div #header-div {
+    height: 70px;
+}
+
+div #padding {
+    padding: 100px;
+}
