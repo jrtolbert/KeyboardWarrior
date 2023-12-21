@@ -1,29 +1,30 @@
-'use client'
+"use client"
 import { useEffect, useState } from "react";
 
-let result = 0;
-
-function MatchMaker(event) {
-    var target = document.getElementById("excerpt").textContent;
-    var targetString = target.substring(1, target.length - 1);
-    let matchCounter = 0;
-
-    for (var i = 0; i <= event.target.value.length - 1; i++) {
-        matchCounter += targetString[i] == event.target.value[i] ? 1 : 0;
-    }
-
-    result = Math.round(matchCounter / targetString.length * 100);
-    console.log(`${result}% match`);
-}
 
 export default function PercentCompleted() {
-    // console.log("Running PercentCompleted");
-    let txtArea = undefined;
 
+    const [currentRes, setCurrentRes] = useState(0);
+    const [txtArea, setTxtArea] = useState();
     const [seconds, setSeconds] = useState(0);
     const [blob, setBlob] = useState();
     const [excerpt, setExcerpt] = useState();
     const [ready, setReady] = useState(false);
+
+    
+
+    function MatchMaker(event) {
+        var target = document.getElementById("excerpt").textContent;
+        var targetString = target.substring(1, target.length - 1);
+        let matchCounter = 0;
+    
+        for (var i = 0; i <= event.target.value.length - 1; i++) {
+            matchCounter += targetString[i] == event.target.value[i] ? 1 : 0;
+        }
+    
+        setCurrentRes(Math.round(matchCounter / targetString.length * 100));
+    }
+
 
     // capture excerptToRead and blob which is the textarea
     useEffect(() => {
@@ -33,8 +34,9 @@ export default function PercentCompleted() {
         if (seconds >= 1 && !ready) {
             console.log("Preparing excerptToRead and blobToCheck");
             setExcerpt(document.getElementById("excerpt"));
-            setBlob(document.getElementById("KW-textarea"));
+            setBlob(document.getElementById("KW-textarea")); 
             if (excerpt && blob) {
+                setTxtArea(blob.querySelector("textArea"));
                 setReady(true);
             }
         }
@@ -46,15 +48,19 @@ export default function PercentCompleted() {
 
     // extract textarea element from blob
     useEffect(() => {
-        if (ready && result == 0) {
+        if (ready && currentRes == 0) {
             console.log("Excerpt and blob are ready"); 
-            txtArea = blob.querySelector("textArea");
             txtArea.addEventListener("input", MatchMaker);
         }
-        if (result == 100) {
+        if (currentRes == 100) {
             txtArea.removeEventListener("input", MatchMaker);
         }
-    }, [ready]);
+    }, [ready, currentRes]);
+
+    return (
+        <div id='percentcomplete'>{currentRes}% match</div>
+    );
+    
 }
    
 

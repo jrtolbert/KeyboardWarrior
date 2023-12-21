@@ -1,6 +1,8 @@
 // 'use client'
 
 import ExcerptAPI from './components/ExcerptAPI';
+import Keyboard from './components/Keyboard';
+import GetKeyBindings from './components/KeyboardHelper';
 import ReadKeys from "./components/ReadKeys";
 import { ToastContainer } from 'react-toastify';
 import MyTimer from './components/Timer';
@@ -11,10 +13,12 @@ import { Container, Col, Row } from 'react-bootstrap';
 
 export default async function Page() {
     const excerpt = await <ExcerptAPI />;
+    const keybindings = await GetKeyBindings();
+
     return (
         <main>
-            <PercentCompleted />
-            <Container>
+            <Keyboard keys={keybindings} />
+            {/* <Container>
                 <div id='header-div' className='grid grid-rows-1 grid-cols-2 grid-flow-col auto-row-auto bg-emerald-500'>
                     <div className='col-span-1 flex justify-start'>
                         <img className='max-w-md ' src='./KW-logo.png' alt='logo' />
@@ -25,15 +29,18 @@ export default async function Page() {
                         </div>
                      </div>
                 </div>
-                <Row className='columns-1'>
-                    <Col id='Stopwatch' className='top-10'>
+                <Row className='columns-2'>
+                    <Col id='PercentComplete' className='border-2'>
+                        <PercentCompleted />
+                    </Col>
+                    <Col id='Stopwatch' className='top-10 border-2'>
                         <ToastContainer autoClose={3000} position='top-right' theme='dark'/>
                         <MyTimer />
                     </Col>
                 </Row>
                 <div id='padding'></div>
                 <Row>
-                    <div className='flex flex-col'>
+                    <div className='flex flex-col border-2'>
                         <div id='excerpt-div' className='inline-block'>
                             <p id='excerpt'> {excerpt} </p>
                         </div>
@@ -44,16 +51,8 @@ export default async function Page() {
                             <textarea placeholder="Blob" onChange={ReadKeys} className='w-full' rows='10'/>
                         </div>
                     </div>
-                    {/* <Col className='inline-block'>
-                        <p id='excerpt'> {excerpt} </p>
-                    </Col>
-                    <Col className='border-2'>
-                        <div id='KW-textarea' success='false'>
-                            <textarea placeholder="Blob" onChange={ReadKeys} className='w-full' rows='10'/>
-                        </div>
-                    </Col> */}
                 </Row>
-            </Container>
+            </Container> */}
         </main>
     )
 }

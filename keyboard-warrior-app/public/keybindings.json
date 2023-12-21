@@ -1,0 +1,72 @@
+{
+    "1" : [
+        {"`": "Backquote"},
+        {"1": "Digit1"},
+        {"2": "Digit2"},
+        {"3": "Digit3"},
+        {"4": "Digit4"},
+        {"5": "Digit5"},
+        {"6": "Digit6"},
+        {"7": "Digit7"},
+        {"8": "Digit8"},
+        {"9": "Digit9"},
+        {"0": "Digit0"},
+        {"-": "Minus"},
+        {"=": "Equal"},
+        {"back": "Backspace"}
+    ],
+    "2": [
+        {"tab": "Tab"},
+        {"q": "KeyQ"},
+        {"w": "KeyW"},
+        {"e": "KeyE"},
+        {"r": "KeyR"},
+        {"t": "KeyT"},
+        {"y": "KeyY"},
+        {"u": "KeyU"},
+        {"i": "KeyI"},
+        {"o": "KeyO"},
+        {"p": "KeyP"},
+        {"[": "BracketLeft"},
+        {"]": "BracketRight"},
+        {"\\": "Backslash"}
+    ],
+    "3" : [
+        {"caps": "CapsLock"},
+        {"a": "KeyA"},
+        {"s": "KeyS"},
+        {"d": "KeyD"},
+        {"f": "KeyF"},
+        {"g": "KeyG"},
+        {"h": "KeyH"},
+        {"j": "KeyJ"},
+        {"k": "KeyK"},
+        {"l": "KeyL"},
+        {";": "Semicolon"},
+        {"'": "Quote"},
+        {"enter": "Enter"}
+    ],
+    "4": [
+        {"shift": "ShiftLeft"},
+        {"z": "KeyZ"},
+        {"x": "KeyX"},
+        {"c": "KeyC"},
+        {"v": "KeyV"},
+        {"b": "KeyB"},
+        {"n": "KeyN"},
+        {"m": "KeyM"},
+        {",": "Comma"},
+        {".": "Period"},
+        {"/": "Slash"},
+        {"shift": "ShiftRight"}
+    ],
+    "5": [
+        {"ctrl": "ControlLeft"},
+        {"start": "MetaLeft"},
+        {"alt": "AltLeft"},
+        {" ": "Space"},
+        {"alt": "AltRight"},
+        {"start": "MetaRight"},
+        {"ctrl": "ControlRight"} 
+    ]
+}

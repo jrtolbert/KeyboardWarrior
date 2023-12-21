@@ -1,0 +1,72 @@
+{
+    "1" : [
+        {"~": "Backquote"},
+        {"!": "Digit1"},
+        {"@": "Digit2"},
+        {"#": "Digit3"},
+        {"$": "Digit4"},
+        {"%": "Digit5"},
+        {"^": "Digit6"},
+        {"&": "Digit7"},
+        {"*": "Digit8"},
+        {"(": "Digit9"},
+        {")": "Digit0"},
+        {"_": "Minus"},
+        {"+": "Equal"},
+        {"back": "Backspace"}
+    ],
+    "2": [
+        {"tab": "Tab"},
+        {"Q": "KeyQ"},
+        {"W": "KeyW"},
+        {"E": "KeyE"},
+        {"R": "KeyR"},
+        {"T": "KeyT"},
+        {"Y": "KeyY"},
+        {"U": "KeyU"},
+        {"I": "KeyI"},
+        {"O": "KeyO"},
+        {"P": "KeyP"},
+        {"{": "BracketLeft"},
+        {"}": "BracketRight"},
+        {"|": "Backslash"}
+    ],
+    "3" : [
+        {"caps": "CapsLock"},
+        {"A": "KeyA"},
+        {"S": "KeyS"},
+        {"D": "KeyD"},
+        {"F": "KeyF"},
+        {"G": "KeyG"},
+        {"H": "KeyH"},
+        {"J": "KeyJ"},
+        {"K": "KeyK"},
+        {"L": "KeyL"},
+        {":": "Semicolon"},
+        {"\"": "Quote"},
+        {"enter": "Enter"}
+    ],
+    "4": [
+        {"shift": "ShiftLeft"},
+        {"Z": "KeyZ"},
+        {"X": "KeyX"},
+        {"C": "KeyC"},
+        {"V": "KeyV"},
+        {"B": "KeyB"},
+        {"N": "KeyN"},
+        {"M": "KeyM"},
+        {",": "Comma"},
+        {".": "Period"},
+        {"/": "Slash"},
+        {"shift": "ShiftRight"}
+    ],
+    "5": [
+        {"ctrl": "ControlLeft"},
+        {"start": "MetaLeft"},
+        {"alt": "AltLeft"},
+        {" ": "Space"},
+        {"alt": "AltRight"},
+        {"start": "MetaRight"},
+        {"ctrl": "ControlRight"} 
+    ]
+}

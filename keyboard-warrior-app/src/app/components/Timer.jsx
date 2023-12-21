@@ -1,12 +1,11 @@
 "use client"
 import { useStopwatch } from 'react-timer-hook';
 import { useEffect, useState } from 'react';
-// expiryTimestamp - Date object
 
 let hasStarted = false;
+let hasFinished = false;
 
 function Go(start) {
-    console.log("Timer eventListner added to textArea");
     if (!hasStarted) {
         start();
         hasStarted = true;
@@ -50,18 +49,30 @@ export default function MyTimer() {
                 Go(start);
             });
         }
-        if (ready) {
+        if (ready && !hasFinished) {
             if (ta_div && ta_div.getAttribute("success") == 'true'){
                 pause();
                 textArea.removeEventListener("input", Go);
-
-                let wordsPerSecond = excerpt.textContent.length / totalSeconds;
-                console.log("Words per second: ", wordsPerSecond.toFixed(2));
+                hasFinished = true;
             }
         }
 
         return () => clearInterval(interval);
     }, [internalClock]);
+
+    useEffect(() => {
+        if (hasFinished) {
+            console.log("Has finished has been set to true: ", hasFinished);
+            let wordArray = excerpt.textContent.split(" ");
+            wordArray = wordArray.filter((word) =>{ return word != ""});
+            console.log(wordArray.length);
+            console.log(wordArray);
+            let wordsPerSecond = wordArray.length / totalSeconds;
+            console.log("Words per second: ", wordsPerSecond.toFixed(2));
+        }
+    }, [hasFinished])
+
+
 
    try {
         return (
