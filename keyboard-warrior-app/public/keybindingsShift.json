@@ -55,9 +55,9 @@
         {"B": "KeyB"},
         {"N": "KeyN"},
         {"M": "KeyM"},
-        {",": "Comma"},
-        {".": "Period"},
-        {"/": "Slash"},
+        {"<": "Comma"},
+        {">": "Period"},
+        {"?": "Slash"},
         {"shift": "ShiftRight"}
     ],
     "5": [

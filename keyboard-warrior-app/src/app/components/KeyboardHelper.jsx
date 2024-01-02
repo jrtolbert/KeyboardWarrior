@@ -9,7 +9,7 @@ async function initializeKeyBindings() {
     const fileContent = fs.readFileSync(keyBindingsPath);
     const fileContentCap = fs.readFileSync(keyBindingsCapPath);
     const fileContentShift = fs.readFileSync(keyBindingsShiftPath);
-    let results = JSON.parse(fileContent);
+    let results = [JSON.parse(fileContent), JSON.parse(fileContentCap), JSON.parse(fileContentShift)];
     // let results = [JSON.parse(fileContent), JSON.parse(fileContentCap), JSON.parse(fileContentShift)];
 
     return results;

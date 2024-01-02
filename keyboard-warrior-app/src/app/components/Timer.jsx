@@ -70,7 +70,7 @@ export default function MyTimer() {
             let wordsPerSecond = wordArray.length / totalSeconds;
             console.log("Words per second: ", wordsPerSecond.toFixed(2));
         }
-    }, [hasFinished])
+    }, [hasFinished]);
 
 
 
