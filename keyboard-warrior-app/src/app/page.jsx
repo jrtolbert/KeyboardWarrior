@@ -17,8 +17,8 @@ export default async function Page() {
 
     return (
         <main>
-            <Keyboard keys={keybindings} />
-            {/* <Container>
+            <p>Some <span className='bg-yellow-400'> text that should be highlighted </span> </p>
+            <Container className="container lg:mx-auto border border-black">
                 <div id='header-div' className='grid grid-rows-1 grid-cols-2 grid-flow-col auto-row-auto bg-emerald-500'>
                     <div className='col-span-1 flex justify-start'>
                         <img className='max-w-md ' src='./KW-logo.png' alt='logo' />
@@ -29,15 +29,26 @@ export default async function Page() {
                         </div>
                      </div>
                 </div>
-                <Row className='columns-2'>
-                    <Col id='PercentComplete' className='border-2'>
-                        <PercentCompleted />
-                    </Col>
-                    <Col id='Stopwatch' className='top-10 border-2'>
+                <div id="keyboard-timer" className='grid grid-flow-col auto-cols-auto grid-rows-1 h-f gap-20 '>
+                    <div className='col-span-2'>
+                        <Keyboard keys={keybindings} />
+                    </div>
+                    <div className='col-span-1 top-10'>
+                        <ToastContainer autoClose={3000} position='top-right' theme='dark'/>
+                        <MyTimer />
+                    </div>
+                </div>
+
+                {/* <Row className='columns-2 h-full border border-gray-500'>
+                    <Col id='PercentComplete' className='border border-black'>
+                        {/* <PercentCompleted /> */}
+                        {/* <Keyboard keys={keybindings} /> */}
+                    {/* </Col>
+                    <Col id='Stopwatch' className='top-10'>
                         <ToastContainer autoClose={3000} position='top-right' theme='dark'/>
                         <MyTimer />
                     </Col>
-                </Row>
+                </Row> */} 
                 <div id='padding'></div>
                 <Row>
                     <div className='flex flex-col border-2'>
@@ -52,7 +63,12 @@ export default async function Page() {
                         </div>
                     </div>
                 </Row>
-            </Container> */}
+                <div className='flex justify-center'>
+                <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    Reset
+                </button>
+                </div>
+            </Container>
         </main>
     )
 }
